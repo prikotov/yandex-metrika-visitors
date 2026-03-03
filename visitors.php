@@ -136,6 +136,7 @@ if ($args['limit'] !== null && $args['limit'] > 0) {
 }
 
 $reportPath = MetrikaClient::createReportDir();
+$timestamp = MetrikaClient::getFileTimestamp();
 
 $label = getDimensionLabel($args['by']);
 
@@ -148,10 +149,10 @@ if ($args['limit'] !== null) {
 }
 echo "\n";
 
-MetrikaClient::saveCsv($visitors, "$reportPath/visitors.csv");
-MetrikaClient::saveMarkdown($visitors, "$reportPath/visitors.md", "Посетители по {$label}", $args['dateFrom'], $args['dateTo']);
+MetrikaClient::saveCsv($visitors, "$reportPath/visitors_$timestamp.csv");
+MetrikaClient::saveMarkdown($visitors, "$reportPath/visitors_$timestamp.md", "Посетители по {$label}", $args['dateFrom'], $args['dateTo']);
 
 echo "  Создано файлов:\n";
-echo "    - visitors.csv\n";
-echo "    - visitors.md\n";
+echo "    - visitors_$timestamp.csv\n";
+echo "    - visitors_$timestamp.md\n";
 echo "\n  Найдено записей: " . count($visitors) . "\n";
