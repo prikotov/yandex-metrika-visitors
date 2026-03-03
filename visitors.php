@@ -52,8 +52,7 @@ function getDimension(string $by): string
         'country' => 'ym:s:regionCountry',
         'city' => 'ym:s:regionCity',
         'age' => 'ym:s:age',
-        'gender' => 'ym:s:gender',
-        'interest' => 'ym:s:interests'
+        'gender' => 'ym:s:gender'
     ];
     
     return $map[$by] ?? 'ym:s:browser';
@@ -70,8 +69,7 @@ function getDimensionLabel(string $by): string
         'country' => 'Страна',
         'city' => 'Город',
         'age' => 'Возраст',
-        'gender' => 'Пол',
-        'interest' => 'Интерес'
+        'gender' => 'Пол'
     ];
     
     return $map[$by] ?? 'Значение';

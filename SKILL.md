@@ -25,7 +25,7 @@ php .opencode/skills/yandex-metrika-visitors/visitors.php [опции] [дата
 
 | Опция | Сокращение | Описание | Значения | По умолчанию |
 |-------|------------|----------|----------|--------------|
-| `--by` | `-b` | Группировка | `browser`, `browser_version`, `device`, `os`, `os_version`, `country`, `city`, `age`, `gender`, `interest` | `browser` |
+| `--by` | `-b` | Группировка | `browser`, `browser_version`, `device`, `os`, `os_version`, `country`, `city`, `age`, `gender` | `browser` |
 | `--sort` | `-s` | Поле сортировки | `visits`, `visitors`, `bounce_rate`, `page_depth`, `avg_duration` | `visits` |
 | `--order` | `-o` | Направление сортировки | `asc`, `desc` | `desc` |
 | `--limit` | `-l` | Лимит записей | число (например: 10, 20, 50) | все записи |
