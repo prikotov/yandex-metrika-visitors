@@ -1,8 +1,6 @@
 ---
 name: yandex-metrika-visitors
 description: Анализ посетителей из Яндекс.Метрики по различным срезам
-license: MIT
-compatibility: opencode
 ---
 
 ## Когда использовать
