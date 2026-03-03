@@ -69,7 +69,6 @@ php .opencode/skills/yandex-metrika-visitors/visitors.php -b gender
 | `city` | Города |
 | `age` | Возраст |
 | `gender` | Пол |
-| `interest` | Интересы |
 
 ### Через агента
 
