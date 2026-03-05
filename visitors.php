@@ -13,7 +13,8 @@ function parseArgs(array $argv): array
         'by' => 'browser',
         'sort' => 'visits',
         'order' => 'desc',
-        'limit' => null
+        'limit' => null,
+        'site' => null
     ];
     
     $i = 1;
@@ -28,6 +29,8 @@ function parseArgs(array $argv): array
             $result['order'] = $argv[++$i];
         } elseif (in_array($arg, ['--limit', '-l']) && isset($argv[$i + 1])) {
             $result['limit'] = (int)$argv[++$i];
+        } elseif (in_array($arg, ['--site']) && isset($argv[$i + 1])) {
+            $result['site'] = $argv[++$i];
         } elseif (!str_starts_with($arg, '-') && strlen($arg) === 10 && strpos($arg, '-') !== false) {
             if (!$result['dateFrom'] || $result['dateFrom'] === date('Y-m-d', strtotime('-30 days'))) {
                 $result['dateFrom'] = $arg;
@@ -89,11 +92,14 @@ function getSortField(string $sort): string
 }
 
 $args = parseArgs($argv);
+$counterId = MetrikaClient::getCounterIdFromConfig($config, $args['site']);
+$siteName = $args['site'] ?? ($config['default_counter'] ?? null);
 
 $client = new MetrikaClient(
     $config['client_id'],
     $config['client_secret'],
-    $config['counter_id']
+    $counterId,
+    $siteName
 );
 
 function getVisitorsData(MetrikaClient $client, string $dateFrom, string $dateTo, string $dimension, string $sortField, string $order): array
@@ -139,6 +145,9 @@ $timestamp = MetrikaClient::getFileTimestamp();
 $label = getDimensionLabel($args['by']);
 
 echo "\n  Папка отчета: yandex_metrika_reports/" . basename($reportPath) . "\n";
+if ($siteName) {
+    echo "  Сайт: $siteName\n";
+}
 echo "  Период: {$args['dateFrom']} — {$args['dateTo']}\n";
 echo "  Группировка: {$label}\n";
 echo "  Сортировка: {$args['sort']} ({$args['order']})\n";
