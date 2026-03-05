@@ -43,6 +43,9 @@ git clone https://github.com/prikotov/yandex-metrika-visitors.git .opencode/skil
 # Топ браузеров
 php .opencode/skills/yandex-metrika-visitors/visitors.php
 
+# Для конкретного сайта
+php .opencode/skills/yandex-metrika-visitors/visitors.php --site task.ai-aid.pro
+
 # Распределение по устройствам
 php .opencode/skills/yandex-metrika-visitors/visitors.php -b device
 

@@ -25,6 +25,7 @@ php .opencode/skills/yandex-metrika-visitors/visitors.php [опции] [дата
 
 | Опция | Сокращение | Описание | Значения | По умолчанию |
 |-------|------------|----------|----------|--------------|
+| `--site` | | Имя сайта из конфига | имя сайта | default_counter |
 | `--by` | `-b` | Группировка | `browser`, `browser_version`, `device`, `os`, `os_version`, `country`, `city`, `age`, `gender` | `browser` |
 | `--sort` | `-s` | Поле сортировки | `visits`, `visitors`, `bounce_rate`, `page_depth`, `avg_duration` | `visits` |
 | `--order` | `-o` | Направление сортировки | `asc`, `desc` | `desc` |
@@ -35,6 +36,9 @@ php .opencode/skills/yandex-metrika-visitors/visitors.php [опции] [дата
 ```bash
 # Топ браузеров за 30 дней
 php .opencode/skills/yandex-metrika-visitors/visitors.php
+
+# Для конкретного сайта
+php .opencode/skills/yandex-metrika-visitors/visitors.php --site task.ai-aid.pro
 
 # Топ-10 браузеров с версиями
 php .opencode/skills/yandex-metrika-visitors/visitors.php -b browser_version -l 10
