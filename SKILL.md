@@ -64,7 +64,7 @@ php .opencode/skills/yandex-metrika-visitors/visitors.php -b city -l 15 2025-01-
 ## Результат
 
 `yandex_metrika_reports/YYYY-MM-DD/`:
-- `visitors_YYYY-MM-DD_HH-MM-SS.csv` / `.md` — данные о посетителях
+- `yandex_metrika_visitors_YYYY-MM-DD_HH-MM-SS.csv` / `.md` — данные о посетителях
 
 ### Поля в отчете
 

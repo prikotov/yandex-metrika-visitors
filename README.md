@@ -17,7 +17,7 @@
 
 | Файл | Содержание |
 |------|------------|
-| `visitors_*.*` | Данные о посетителях с метриками: визиты, посетители, отказы, время на сайте |
+| `yandex_metrika_visitors_*.*` | Данные о посетителях с метриками: визиты, посетители, отказы, время на сайте |
 
 ## Зависимости
 
@@ -93,8 +93,8 @@ php .opencode/skills/yandex-metrika-visitors/visitors.php -b gender
 ```
 yandex_metrika_reports/
 └── 2026-03-03/
-    ├── visitors_2026-03-03_10-30-15.csv
-    └── visitors_2026-03-03_10-30-15.md
+    ├── yandex_metrika_visitors_2026-03-03_10-30-15.csv
+    └── yandex_metrika_visitors_2026-03-03_10-30-15.md
 ```
 
 CSV открывается в Excel/LibreOffice, Markdown — в любом текстовом редакторе или напрямую в Obsidian.

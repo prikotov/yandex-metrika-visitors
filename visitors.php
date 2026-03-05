@@ -147,10 +147,10 @@ if ($args['limit'] !== null) {
 }
 echo "\n";
 
-MetrikaClient::saveCsv($visitors, "$reportPath/visitors_$timestamp.csv");
-MetrikaClient::saveMarkdown($visitors, "$reportPath/visitors_$timestamp.md", "Посетители по {$label}", $args['dateFrom'], $args['dateTo']);
+MetrikaClient::saveCsv($visitors, "$reportPath/yandex_metrika_visitors_$timestamp.csv");
+MetrikaClient::saveMarkdown($visitors, "$reportPath/yandex_metrika_visitors_$timestamp.md", "Посетители по {$label}", $args['dateFrom'], $args['dateTo']);
 
 echo "  Создано файлов:\n";
-echo "    - visitors_$timestamp.csv\n";
-echo "    - visitors_$timestamp.md\n";
+echo "    - yandex_metrika_visitors_$timestamp.csv\n";
+echo "    - yandex_metrika_visitors_$timestamp.md\n";
 echo "\n  Найдено записей: " . count($visitors) . "\n";
